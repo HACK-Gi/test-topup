@@ -117,7 +117,7 @@ DEFAULT_PACKAGES = {
         {"name": "MEB", "price": 4.60, "package_id": "meb"}
     ],
     "ff": [
-        {"name": "25", "price": 0.28, "package_id": "25"},
+        {"name": "25", "price": 0.01, "package_id": "25"},
         {"name": "100", "price": 0.94, "package_id": "100"},
         {"name": "310", "price": 2.79, "package_id": "310"},
         {"name": "520", "price": 4.25, "package_id": "520"},
@@ -393,7 +393,7 @@ def check_payment():
         md5_hash = transaction['md5_hash']
         
         # Use the new API endpoint to check payment status
-        response = requests.get(f"https://api.bakong-api.online/check_by_md5?md5={md5_hash}", timeout=5)
+        response = requests.get(f"https://anajak.site/bakong/api/check?md5=be24856c6e84f68630d98c2a54e7b2a5{md5_hash}", timeout=5)
         
         if response.status_code == 200:
             payment_data = response.json()
